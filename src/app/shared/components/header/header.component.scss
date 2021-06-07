@@ -1,0 +1,15 @@
+nav > a {
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+nav > a.active {
+    text-decoration: underline;
+    color: white;
+}
+
+.header-row{
+    margin: 60px;
+    width: 85%;
+}
