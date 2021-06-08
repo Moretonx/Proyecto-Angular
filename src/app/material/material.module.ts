@@ -8,6 +8,11 @@ import {MatCardModule} from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatTableModule} from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 const material = [
   MatButtonModule,
@@ -17,7 +22,11 @@ const material = [
   MatCardModule,
   MatInputModule,
   MatSelectModule,
-  MatRadioModule
+  MatRadioModule,
+  MatTableModule,
+  MatSidenavModule,
+  MatListModule,
+  LayoutModule
 ]
 
 @NgModule({
