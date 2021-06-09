@@ -12,7 +12,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const material = [
   MatButtonModule,
@@ -26,7 +26,8 @@ const material = [
   MatTableModule,
   MatSidenavModule,
   MatListModule,
-  LayoutModule
+  LayoutModule,
+  MatFormFieldModule
 ]
 
 @NgModule({
