@@ -1,0 +1,31 @@
+<div class="centrar">
+    <form [formGroup]="form" (ngSubmit)="login($event)">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <mat-icon>account_box</mat-icon>
+                    <span>Iniciar sesión</span>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <!-- Email -->
+                <div class="col-xs">
+                    <mat-form-field appearance="outline" class="email">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" type="text">
+                    </mat-form-field>
+                </div>
+                <!-- Password -->
+                <div class="col-xs">
+                    <mat-form-field appearance="outline" class="password">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" type="password">
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [disabled]="form.invalid" mat-raised-button color="primary" type="submit">Iniciar sesión</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>
