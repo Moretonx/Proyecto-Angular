@@ -35,7 +35,7 @@ export class ProductDetailComponent implements OnInit {
     const newProduct = {
       id: '222',
       title: 'nuevo',
-      image: './assets/images/banner_1.jpg',
+      image: './assets/images/lapiz.jpg',
       price: 3000,
       description: 'nuevo producto'
     };
@@ -57,7 +57,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   deleteProduct(){
-    this.productsService.deleteProduct('3')
+    this.productsService.deleteProduct(''/* this.product.id */)
     .subscribe(x =>{
       console.log(x);
     })

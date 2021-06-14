@@ -9,9 +9,9 @@ export class BannerComponent implements OnInit {
 
 
   images: string[] = [
-    'assets/imagenes/banner-1.jpg',
-    'assets/imagenes/banner-2.jpg',
-    'assets/imagenes/banner-3.jpg'
+    'assets/images/banner-1.jpg',
+    'assets/images/banner-2.jpg',
+    'assets/images/banner-3.jpg'
   ];
 
   constructor() { }
