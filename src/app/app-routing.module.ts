@@ -23,6 +23,11 @@ const routes: Routes = [
         loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
       },
       {
+        path: 'order',
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
+      },
+      {
         path: 'contact',
         canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)

@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
 
 const material = [
   MatButtonModule,
@@ -27,7 +28,8 @@ const material = [
   MatSidenavModule,
   MatListModule,
   LayoutModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatStepperModule
 ]
 
 @NgModule({

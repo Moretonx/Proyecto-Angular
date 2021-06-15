@@ -1,0 +1,70 @@
+<mat-horizontal-stepper>
+    <mat-step>
+      <ng-template matStepLabel>Sus productos</ng-template>
+      <!-- <div *ngIf="(products$ | async) as products">
+          <p *ngIf="products.length === 0">no hay productos</p>
+          <div class="row" *ngFor="let product of products">
+            <div class="col-xs-12 col-sm-2 col-md-2">
+              <div class="box">
+                <img class="image" [src]="product.image" alt="">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5">
+              <div class="box">
+                {{ product.title }}
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5">
+              <div class="box">
+                {{ product.price }}
+              </div>
+            </div>
+          </div>
+      </div> -->
+
+      <form [formGroup]="form">
+        <div *ngIf="(products$ | async) as products">
+          <!-- No hay productos -->
+          <h2 *ngIf="products.length === 0">
+            El carrito está vacío...
+          </h2>
+          <!-- Productos -->
+          <mat-card *ngFor="let product of (products | doblesProductos) as productsWithoutDuplicates">
+            <div *ngIf="(1 | contadorProductos: product:products) as count">
+              <mat-card-header>
+                <img mat-card-avatar [src]="product.image">
+                <mat-card-title>{{ product.title }} ({{ 1 | contadorProductos: product:products }})</mat-card-title>
+                <mat-card-subtitle>{{ product.price * count | currency }}</mat-card-subtitle>
+              </mat-card-header>
+              <!-- Control de cantidad de productos -->
+              <div>
+                <button mat-mini-fab color="primary" class="quantity-button" [disabled]="count===1"
+                  (click)="remove(product.id)"> - </button>
+                <button mat-mini-fab color="primary" class="quantity-button" (click)="addCart(product)"> + </button>
+              </div>
+              <!-- Acciones -->
+              <mat-card-actions>
+                <button mat-button color="primary" (click)="removeFromCart(product.id)">Eliminar</button>
+              </mat-card-actions>
+            </div>
+          </mat-card>
+          <!-- Total -->
+          <div *ngIf="products.length !== 0">
+            <mat-divider></mat-divider>
+            <h2>Total: {{ totalAmount() | currency }}</h2>
+          </div>
+        </div>
+      </form>
+      
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Datos personales</ng-template>
+      <h1>Dirección de entrega</h1>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Pago</ng-template>
+      <h1>Pagar</h1>
+    </mat-step>
+  </mat-horizontal-stepper>
+
+  

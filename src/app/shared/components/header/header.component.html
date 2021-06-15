@@ -6,7 +6,7 @@
                 <a routerLink="/product" routerLinkActive="active">Productos</a>
                 <a routerLink="/contact" routerLinkActive="active">Contacto</a>
             </nav>
-            <a mat-raised-button [matBadge]=total matBadgeColor="warn">
+            <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
                 <mat-icon>shopping_cart</mat-icon>
                 Carrito
             </a>

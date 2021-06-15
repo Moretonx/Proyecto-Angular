@@ -6,13 +6,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MaterialModule} from './../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DoblesProductosPipe } from './pipes/dobles-productos/dobles-productos.pipe';
+import { ContadorProductosPipe } from './pipes/contador-productos/contador-productos.pipe';
 
 
 @NgModule({
   declarations: [
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DoblesProductosPipe,
+    ContadorProductosPipe
   ],
   imports: [
     CommonModule,
@@ -20,6 +24,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     ReactiveFormsModule
   ],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent, DoblesProductosPipe, ContadorProductosPipe],
 })
 export class SharedModule { }
